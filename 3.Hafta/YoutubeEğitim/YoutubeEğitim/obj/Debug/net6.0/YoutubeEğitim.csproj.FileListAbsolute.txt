@@ -1,0 +1,15 @@
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\bin\Debug\net6.0\YoutubeEğitim.exe
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\bin\Debug\net6.0\YoutubeEğitim.deps.json
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\bin\Debug\net6.0\YoutubeEğitim.runtimeconfig.json
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\bin\Debug\net6.0\YoutubeEğitim.dll
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\bin\Debug\net6.0\YoutubeEğitim.pdb
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\YoutubeEğitim.csproj.AssemblyReference.cache
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\YoutubeEğitim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\YoutubeEğitim.AssemblyInfoInputs.cache
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\YoutubeEğitim.AssemblyInfo.cs
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\YoutubeEğitim.csproj.CoreCompileInputs.cache
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\YoutubeEğitim.dll
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\refint\YoutubeEğitim.dll
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\YoutubeEğitim.pdb
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\YoutubeEğitim.genruntimeconfig.cache
+C:\Users\90530\source\repos\YoutubeEğitim\YoutubeEğitim\obj\Debug\net6.0\ref\YoutubeEğitim.dll
