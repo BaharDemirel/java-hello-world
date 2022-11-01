@@ -1,0 +1,65 @@
+package Kodlama.io.Devs.webApi.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import Kodlama.io.Devs.business.abstracts.ProgrammingLanguageService;
+import Kodlama.io.Devs.business.concretes.ProgrammingLanguageManager;
+import Kodlama.io.Devs.dataAccess.concretes.InMemoryProgrammingLanguageRepository;
+import Kodlama.io.Devs.entities.concretes.ProgrammingLanguage;
+
+@RestController
+@RequestMapping("/api/languages")
+public class LanguagesController {
+	
+	ProgrammingLanguageManager languageManager;
+	
+	@Autowired
+	public LanguagesController() {
+		InMemoryProgrammingLanguageRepository LanguageRepo = new InMemoryProgrammingLanguageRepository();
+		try {
+			LanguageRepo.add(new ProgrammingLanguage(1, "Java"));
+			LanguageRepo.add(new ProgrammingLanguage(2, "Pyton"));
+			LanguageRepo.add(new ProgrammingLanguage(3, "C#"));
+		}catch(Exception e) {
+			
+		}
+		
+		this.languageManager = new ProgrammingLanguageManager(LanguageRepo);
+	}
+	
+	@GetMapping("/getall") 
+	public List<ProgrammingLanguage> getAll(){
+		return languageManager.getAll();
+	}
+	
+	@GetMapping("/{id}") 
+	public ProgrammingLanguage getById(@PathVariable() int id) throws Exception{
+		return languageManager.getById(id);
+	}
+	
+	@PostMapping
+	public void add(@RequestBody ProgrammingLanguage language)throws Exception{
+		languageManager.add(language);
+	}
+	
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable int id) {
+		languageManager.delete(id);
+	}
+	
+	@PutMapping("/{id}")
+	public void update(@RequestBody ProgrammingLanguage language, @PathVariable int id)throws Exception{
+		languageManager.update(id, language);
+	}
+	
+}

@@ -1,0 +1,70 @@
+package Kodlama.io.Devs.dataAccess.concretes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import Kodlama.io.Devs.dataAccess.abstracts.ProgrammingLanguageRepository;
+import Kodlama.io.Devs.entities.concretes.ProgrammingLanguage;
+
+@Repository 
+public class InMemoryProgrammingLanguageRepository implements ProgrammingLanguageRepository{
+	
+	List<ProgrammingLanguage> languages;	
+
+	public InMemoryProgrammingLanguageRepository() {
+		
+		languages = new ArrayList<ProgrammingLanguage>();
+		
+		//languages.add(new ProgrammingLanguage(1,"C#"));
+		//languages.add(new ProgrammingLanguage(2,"Java"));
+		//languages.add(new ProgrammingLanguage(3,"Pyton"));
+		
+	}
+
+	@Override
+	public List<ProgrammingLanguage> getAll() {
+		
+		return languages;
+	}
+	
+	@Override
+	public void add(ProgrammingLanguage language) throws Exception {
+		if(language.getName().isEmpty() || language.getName().isBlank()) {
+			throw new Exception("Boş geçilemez..");
+			
+		}
+		
+		for(ProgrammingLanguage programmingLanguage : languages) {
+			if(language.getName().equalsIgnoreCase(programmingLanguage.getName())) {
+				throw new Exception("Zaten kayıtlı..");
+			}
+		}
+		
+		languages.add(language);		
+		
+	}
+	
+	@Override
+	public void update(int id, ProgrammingLanguage language) throws Exception {
+		if(language.getName().isEmpty() || language.getName().isBlank()) {
+			throw new Exception("Boş geçilemez..");
+		}
+		
+		for(ProgrammingLanguage programmingLanguage : languages) {
+			if(programmingLanguage.getId() != id && programmingLanguage.getName() == language.getName()) {
+				throw new Exception("Zaten kayıtlı..");
+			}
+		}
+		
+		for(ProgrammingLanguage programmingLanguage : languages) {
+			if(programmingLanguage.getId() == id) {
+				programmingLanguage.setName(language.getName());
+			}
+		}		
+	}
+	
+	
+	
+}

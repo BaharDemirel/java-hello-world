@@ -1,0 +1,18 @@
+package Kodlama.io.Devs.dataAccess.concretes;
+
+import java.util.List;
+
+import Kodlama.io.Devs.dataAccess.abstracts.ProgrammingLanguageRepository;
+import Kodlama.io.Devs.entities.concretes.ProgrammingLanguage;
+
+public class InMemoryProgrammingLanguageRepository implements ProgrammingLanguageRepository{
+	
+	List<ProgrammingLanguage> languages;
+
+	@Override
+	public List<ProgrammingLanguage> getAll() {
+		
+		return null;
+	}
+
+}
