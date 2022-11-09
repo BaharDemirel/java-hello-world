@@ -10,6 +10,7 @@ import Kodlama.io.Devs.business.requests.CreateLanguageFrameworkRequest;
 import Kodlama.io.Devs.business.requests.UpdateLanguageFrameworkRequest;
 import Kodlama.io.Devs.business.responses.GetAllLanguagesFrameworkResponse;
 import Kodlama.io.Devs.dataAccess.abstracts.ProgrammingLanguageFrameworkRepository;
+import Kodlama.io.Devs.entities.concretes.ProgrammingLanguage;
 import Kodlama.io.Devs.entities.concretes.ProgrammingLanguageFramework;
 
 @Service 
@@ -44,7 +45,10 @@ public class ProgrammingLanguageFrameworkManager implements ProgrammingLanguageF
 		
 		ProgrammingLanguageFramework languageFramework = new ProgrammingLanguageFramework();
 		languageFramework.setName(createLanguageFrameworkRequest.getName());
-		languageFramework.setLanguageId(createLanguageFrameworkRequest.getLanguageId());
+		
+		ProgrammingLanguage language = new ProgrammingLanguage();
+		language.setId(createLanguageFrameworkRequest.getLanguageId());
+		languageFramework.setLanguageId(language.getId());
 
 		this.languageFrameworkRepository.save(languageFramework);
 	}
@@ -55,7 +59,11 @@ public class ProgrammingLanguageFrameworkManager implements ProgrammingLanguageF
 		ProgrammingLanguageFramework languageFramework = new ProgrammingLanguageFramework();
 		
 		languageFramework.setName(updateLanguageFrameworkRequest.getName());
-		languageFramework.setLanguageId(updateLanguageFrameworkRequest.getLanguageId());
+		
+		ProgrammingLanguage language = new ProgrammingLanguage();
+		language.setId(updateLanguageFrameworkRequest.getLanguageId());
+		languageFramework.setLanguageId(language.getId());
+		
 		languageFramework.setId(id);
 		
 		this.languageFrameworkRepository.save(languageFramework);

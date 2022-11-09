@@ -34,6 +34,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService{
 			GetAllLanguagesResponse responseItem = new GetAllLanguagesResponse();
 			responseItem.setId(language.getId());
 			responseItem.setName(language.getName());
+			responseItem.setFrameworks(language.getFrameworks());
 			languagesResponse.add(responseItem);
 		}
 		return languagesResponse;
